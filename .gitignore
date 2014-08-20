@@ -1,0 +1,5 @@
+node_modules/
+app/bower/
+ionic/node_modules/
+ionic/www/
+ionic/platforms/ios/www

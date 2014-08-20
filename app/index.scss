@@ -1,0 +1,15 @@
+@import 'variables';
+body {
+}
+.row {
+    text-align: center;
+}
+textarea{
+    outline: none;
+    resize: none;
+    overflow: auto;
+}
+.center {
+    margin: 0 auto;
+    text-align: center;
+}
