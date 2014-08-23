@@ -86,10 +86,10 @@ require ['jquery'], ($, t) ->
 
             $scope.duration = duration
 
+            console.log $scope.duration
+
             audio = new Audio "#{window.APP_ROOT || ''}/assets/guided/#{$scope.duration}min.m4a"
             audio.loop = true
-
-            console.log $scope.duration
 
             $scope.closeDurationModal()
 
