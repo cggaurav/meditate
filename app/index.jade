@@ -10,7 +10,7 @@ head
 
     //- IONIC
     link(href='./bower/ionic/css/ionic.min.css', rel='stylesheet')
-    script(src='./bower/ionic/js/ionic.bundle.min.js')
+    script(src='./bower/ionic/js/ionic.bundle.js')
 
     //- cordova script (this will be a 404 during development)
     script(src='cordova.js')
@@ -18,11 +18,11 @@ head
     link(href='index.css', rel='stylesheet')
     script(src='index.js')
 
-    body(animation='slide-left-right-ios7' ng-cloak)
+    body(animation='slide-left-right-ios7')
 
-        //- ion-nav-bar.bar-stable.nav-title-slide-ios7
-        //-     ion-nav-back-button.button-icon.icon.ion-ios7-arrow-back
-        //-         Back
+        ion-nav-bar.bar-stable.nav-title-slide-ios7
+            ion-nav-back-button.button-icon.icon.ion-ios7-arrow-back
+                Back
             
         ion-nav-view
 

@@ -6,6 +6,7 @@ require.config {
         'require-css': "#{window.APP_ROOT || ''}/bower/require-css/css"
         'jquery': "#{window.APP_ROOT || ''}/bower/jquery/dist/jquery"
         'angular': "#{window.APP_ROOT || ''}/bower/angular/angular"
+        'ionic': "#{window.APP_ROOT || ''}/bower/ionic/js/ionic.bundle.min"
 
     shim:
         'jquery':
@@ -19,7 +20,7 @@ require.config {
 }
 
 
-require ['angular'], (angular) ->
+require ['ionic'], () ->
 
     app = angular.module('app', ['ionic'])
 
@@ -37,6 +38,8 @@ require ['angular'], (angular) ->
 
     app.run ($ionicPlatform, $rootScope, $window, $state) ->
 
+        console.log 'app:run()'
+
         $ionicPlatform.ready ->
 
             cordova.plugins.Keyboard.hideKeyboardAccessoryBar true  if window.cordova and window.cordova.plugins.Keyboard
@@ -47,30 +50,28 @@ require ['angular'], (angular) ->
 
     app.config ($stateProvider, $urlRouterProvider) ->
 
+        console.log 'app:config()'
 
         $stateProvider.state("app",
             url: "/app"
             abstract: true
             templateUrl: "views/tab.html"
-            # controller: "AppCtrl"
         ).state("app.calm",
             url: "/calm"
             views:
-                calm:
+                "calm":
                     templateUrl: "views/calm.html"
                     controller: "CalmCtrl"
-        )
-        .state("app.profile",
+        ).state("app.profile",
             url: "/profile"
             views:
-                profile:
+                "profile":
                     templateUrl: "views/profile.html"
                     controller: "ProfileCtrl"
         )
 
+        $urlRouterProvider.otherwise '/app/calm'
 
-        $urlRouterProvider.otherwise "/calm"
-
-    # angular.element(document).ready () ->
-    #     angular.bootstrap(document, ['app'])
+    angular.element(document).ready () ->
+        angular.bootstrap(document, ['app'])
 
