@@ -3,3 +3,5 @@ app/bower/
 ionic/node_modules/
 ionic/www/
 ionic/platforms/ios/www
+app/assets/audio
+app/assets/video

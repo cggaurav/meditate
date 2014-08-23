@@ -1,0 +1,16 @@
+ion-modal-view(title="Duration")
+    ion-header-bar.bar.bar-header
+        h1.title Duration
+        .button.button-clear(ng-click='closeDurationModal()')
+            span.icon.ion-close
+
+    ion-content#page-list-content
+        .list
+            label.item.item-radio               
+                ion-radio(ng-model="duration" ng-value="2" ng-change="durationChange(duration)")
+                    | 2m
+                ion-radio(ng-model="duration" ng-value="5" ng-change="durationChange(duration)")
+                    | 5m
+                ion-radio(ng-model="duration" ng-value="10" ng-change="durationChange(duration)")
+                    | 10m
+

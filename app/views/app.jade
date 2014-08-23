@@ -1,0 +1,18 @@
+ion-view(hide-nav-bar="true")
+    ion-content.center
+
+        h1.logo meditate
+
+        .row(ng-show="playing")
+            //- button.button.center.button-clear.button-large.big-button.button-icon.ion-pause(ng-click="pause()")
+            button.button.center.button-clear.button-large.big-button.button-icon.ion-stop(ng-click="stop()")
+
+        .row(ng-show="!playing")
+            button.button.center.button-clear.button-large.big-button.button-icon.ion-play(ng-click="play()")
+
+        .row
+            button.button.center.button-clear.button-large.button-icon.ion-chevron-up(ng-click="openDurationModal()")
+
+        audio(id="audio" preload="none")
+            source(src="/assets/audio/guided/2min.m4a" type='audio/m4a')
+        
